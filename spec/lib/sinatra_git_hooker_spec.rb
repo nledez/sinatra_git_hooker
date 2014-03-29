@@ -25,5 +25,6 @@ describe "My Traffic light server" do
     ENV['GIT_REPO_HOOK_TOKEN'] = token
     get "/#{token}"
     last_response.should be_ok
+    last_response.body.should == 'Already up-to-date.'
   end
 end
