@@ -12,5 +12,6 @@ describe "My Traffic light server" do
   it "should respond to /" do
     get '/'
     last_response.should be_ok
+    last_response.body.should == "Hello World!"
   end
 end
