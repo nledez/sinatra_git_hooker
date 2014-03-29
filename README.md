@@ -1,14 +1,12 @@
 # SinatraGitHookerServer
 
-A traffic light serveur for Raspberry π
+A sinatra git hook server to exec git pull from web.
 
 Current build:
 [![Build Status](https://travis-ci.org/nledez/sinatra_git_hooker.png)](https://travis-ci.org/nledez/sinatra_git_hooker)
 [![Coverage Status](https://coveralls.io/repos/nledez/sinatra_git_hooker/badge.png)](https://coveralls.io/r/nledez/sinatra_git_hooker)
 [![Dependency Status](https://gemnasium.com/nledez/sinatra_git_hooker.svg)](https://gemnasium.com/nledez/sinatra_git_hooker)
 [![Code Climate](https://codeclimate.com/github/nledez/sinatra_git_hooker.png)](https://codeclimate.com/github/nledez/sinatra_git_hooker)
-
-Yes Code Climate as a bad value, I watch this later.
 
 ## Installation
 
@@ -25,10 +23,6 @@ Or install it yourself as:
     $ gem install sinatra_git_hooker
 
 ## Usage
-
-Launch example in production
-
-If you missing this part server listen only on localhost:4567
 
 Enjoy.
 
