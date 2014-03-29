@@ -14,4 +14,12 @@ describe "My Traffic light server" do
     last_response.should be_ok
     last_response.body.should == "Hello World!"
   end
+
+  it "should create a dynamic route" do
+    token = "ce1ecd9a-6c0b-49b3-8daa-8314389d4067"
+
+    ENV['GIT_REPO_HOOK_TOKEN'] = ''
+    get "/#{token}"
+    last_response.should be_not_found
+  end
 end
