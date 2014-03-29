@@ -21,5 +21,9 @@ describe "My Traffic light server" do
     ENV['GIT_REPO_HOOK_TOKEN'] = ''
     get "/#{token}"
     last_response.should be_not_found
+
+    ENV['GIT_REPO_HOOK_TOKEN'] = token
+    get "/#{token}"
+    last_response.should be_ok
   end
 end

@@ -6,6 +6,8 @@ class SinatraGitHookerServer < Sinatra::Base
   end
 
   get '/:token' do |token|
-    halt 404
+    unless ENV['GIT_REPO_HOOK_TOKEN'] == token
+      halt 404
+    end
   end
 end
