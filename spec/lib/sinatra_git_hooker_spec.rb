@@ -20,7 +20,7 @@ describe "My Traffic light server" do
     ENV['GIT_REPO_HOOK_TOKEN'] = token
     ENV.delete 'GIT_HOOK_COMMAND'
 
-    get "/#{token}"
+    post "/#{token}"
     last_response.should be_server_error
   end
 
@@ -29,11 +29,11 @@ describe "My Traffic light server" do
     ENV['GIT_HOOK_COMMAND'] = "echo 'Already up-to-date.'"
 
     ENV['GIT_REPO_HOOK_TOKEN'] = ''
-    get "/#{token}"
+    post "/#{token}"
     last_response.should be_not_found
 
     ENV['GIT_REPO_HOOK_TOKEN'] = token
-    get "/#{token}"
+    post "/#{token}"
     last_response.should be_ok
     last_response.body.should == "Already up-to-date.\n"
   end

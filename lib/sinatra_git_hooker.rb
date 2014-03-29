@@ -5,7 +5,7 @@ class SinatraGitHookerServer < Sinatra::Base
     "Hello World!"
   end
 
-  get '/:token' do |token|
+  post '/:token' do |token|
     unless ENV.has_key? 'GIT_HOOK_COMMAND'
       halt 500
     end
