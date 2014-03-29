@@ -5,7 +5,7 @@ A traffic light serveur for Raspberry π
 Current build:
 [![Build Status](https://travis-ci.org/nledez/sinatra_git_hooker.png)](https://travis-ci.org/nledez/sinatra_git_hooker)
 [![Coverage Status](https://coveralls.io/repos/nledez/sinatra_git_hooker/badge.png)](https://coveralls.io/r/nledez/sinatra_git_hooker)
-[![Dependency Status](https://gemnasium.com/nledez/sinatra_git_hooker.png)](https://gemnasium.com/nledez/sinatra_git_hooker)
+[![Dependency Status](https://gemnasium.com/nledez/sinatra_git_hooker.svg)](https://gemnasium.com/nledez/sinatra_git_hooker)
 [![Code Climate](https://codeclimate.com/github/nledez/sinatra_git_hooker.png)](https://codeclimate.com/github/nledez/sinatra_git_hooker)
 
 Yes Code Climate as a bad value, I watch this later.
