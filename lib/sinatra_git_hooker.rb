@@ -6,8 +6,12 @@ class SinatraGitHookerServer < Sinatra::Base
   end
 
   get '/:token' do |token|
+    unless ENV.has_key? 'GIT_HOOK_COMMAND'
+      halt 500
+    end
+
     if ENV['GIT_REPO_HOOK_TOKEN'] == token
-      'Already up-to-date.'
+      `#{ENV['GIT_HOOK_COMMAND']}`
     else
       halt 404
     end

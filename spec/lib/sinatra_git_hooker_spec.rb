@@ -15,8 +15,18 @@ describe "My Traffic light server" do
     last_response.body.should == "Hello World!"
   end
 
+  it "should respond a error 500 if GIT_HOOK_COMMAND is undefined" do
+    token = "ce1ecd9a-6c0b-49b3-8daa-8314389d4067"
+    ENV['GIT_REPO_HOOK_TOKEN'] = token
+    ENV.delete 'GIT_HOOK_COMMAND'
+
+    get "/#{token}"
+    last_response.should be_server_error
+  end
+
   it "should create a dynamic route" do
     token = "ce1ecd9a-6c0b-49b3-8daa-8314389d4067"
+    ENV['GIT_HOOK_COMMAND'] = "echo 'Already up-to-date.'"
 
     ENV['GIT_REPO_HOOK_TOKEN'] = ''
     get "/#{token}"
@@ -25,6 +35,6 @@ describe "My Traffic light server" do
     ENV['GIT_REPO_HOOK_TOKEN'] = token
     get "/#{token}"
     last_response.should be_ok
-    last_response.body.should == 'Already up-to-date.'
+    last_response.body.should == "Already up-to-date.\n"
   end
 end
